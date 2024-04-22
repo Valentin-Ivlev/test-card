@@ -7,8 +7,8 @@
     @vite(['resources/scss/app.scss', 'resources/js/app.jsx'])
     <style>
         .card-container {
-            width: 510px;
-            height: 212px;
+            width: 340px;
+            height: 312px;
             position: relative;
         }
         .card-front {
@@ -24,19 +24,53 @@
             left: 0;
         }
         .card-back {
-            width: 190px;
-            height: 212px;
+            width: 340px;
+            height: 140px;
             background-image: url("/card-back.svg");
             background-size: cover;
             background-position: right;
             color: black;
             padding: 20px;
-            padding-top: 70px;
-            padding-left: 60px;
-            border-top-right-radius: 15px;
+            padding-top: 55px;
+            border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
             position: absolute;
-            right: 20px;
+            bottom: 0;
+            right: 0;
+        }
+        @media (min-width: 767px) {
+            .card-container {
+                width: 510px;
+                height: 212px;
+                position: relative;
+            }
+            .card-front {
+                width: 340px;
+                height: 212px;
+                background-image: url("/card-front.svg");
+                background-size: cover;
+                color: white;
+                padding: 20px;
+                padding-top: 55px;
+                border-radius: 15px;
+                position: absolute;
+                left: 0;
+            }
+            .card-back {
+                width: 190px;
+                height: 212px;
+                background-image: url("/card-back.svg");
+                background-size: cover;
+                background-position: right;
+                color: black;
+                padding: 20px;
+                padding-top: 70px;
+                padding-left: 60px;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                position: absolute;
+                right: 20px;
+            }
         }
         .card-btn {
             width: 110px;

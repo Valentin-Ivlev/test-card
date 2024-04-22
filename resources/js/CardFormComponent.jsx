@@ -103,7 +103,7 @@ const CardFormComponent = () => {
     return (
         <div className="container">
             <div
-                className="col-xl-6 col-lg-8 col-md-10 col-sm-12 offset-xl-3 offset-lg-2 offset-md-1 offset-sm-0 rounded-3 shadow my-5 p-5">
+                className="col-lg-8 col-md-10 col-sm-12 offset-lg-2 offset-md-1 offset-sm-0 rounded-3 shadow my-5 p-5">
                 <h2>Пополнить банковской картой</h2>
                 <div className="row">
                     <label htmlFor="amountUSD" className="form-label">Укажите сумму</label>
@@ -141,10 +141,14 @@ const CardFormComponent = () => {
                             <div className="card-container">
                                 <div className="card-back">
                                     <span className="p-0 mb-1 font-085em">CVV/CVC</span>
-                                    <InputMask mask="999"
-                                               className={`form-control ${validateCardDetails().includes('cvv') ? 'is-invalid' : ''}`}
-                                               id="cvv" value={cvv} onChange={(e) => setCvv(e.target.value)}/>
-                                    <div className="pt-1 font-065em">три цифры с обратной стороны карты</div>
+                                    <div className="row">
+                                        <div className="col-4 col-md-12">
+                                        <InputMask mask="999"
+                                                   className={`form-control ${validateCardDetails().includes('cvv') ? 'is-invalid' : ''}`}
+                                                   id="cvv" value={cvv} onChange={(e) => setCvv(e.target.value)}/>
+                                        </div>
+                                        <div className="col-7 col-md-12 pt-1 font-065em">три цифры с обратной стороны карты</div>
+                                    </div>
                                 </div>
                                 <div className="card-front">
                                     <span className="p-0 mb-1 font-085em">НОМЕР КАРТЫ</span>
