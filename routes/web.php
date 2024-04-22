@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/api/cards', [CardController::class, 'index']);
+Route::post('/api/cards', [CardController::class, 'store']);
+Route::get('/{any}', function () {
+    return view('app');
+})->where('any', '.*');

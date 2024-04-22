@@ -1,11 +1,16 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import reactRefresh from '@vitejs/plugin-react-refresh';
 
 export default defineConfig({
     plugins: [
+        reactRefresh(),
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: ['resources/scss/app.scss', 'resources/js/app.jsx'],
             refresh: true,
         }),
     ],
+    build: {
+        outDir: 'public/build',
+    },
 });
